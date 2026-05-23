@@ -151,8 +151,7 @@
     </div> <!-- GRID -->
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-7"> <!-- CARD 1 -->
       <div class="glass card-hover rounded-3xl overflow-hidden template-card">
-        <div class="h-36 sm:h-48 md:h-56 card-img"
-          style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');">
+        <div class="h-36 sm:h-48 md:h-56 card-img" style="background-image:url('templateweb/Screenshot\ 2026-05-24\ 010142.png');">
         </div>
         <div class="p-3 sm:p-5 template-content">
           <div>
@@ -162,14 +161,13 @@
             </div>
             <p class="text-gray-400 mt-3 text-xs sm:text-sm leading-relaxed"> Premium portfolio website source code.
             </p>
-          </div> <button onclick="openCode(portfolioCode)"
-            class="w-full mt-5 bg-cyan-500 hover:bg-cyan-400 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition">
-            Get Code </button>
+          </div> <button onclick="downloadFile('index.zip')" class="w-full mt-5 bg-emerald-500 hover:bg-emerald-400 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition">
+Get Code
+</button>
         </div>
       </div> <!-- CARD 2 -->
       <div class="glass card-hover rounded-3xl overflow-hidden template-card">
-        <div class="h-36 sm:h-48 md:h-56 card-img"
-          style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');">
+        <div class="h-36 sm:h-48 md:h-56 card-img" style="background-image:url('templateweb/het2.png');">
         </div>
         <div class="p-3 sm:p-5 template-content">
           <div>
@@ -184,8 +182,7 @@
         </div>
       </div> <!-- CARD 3 -->
       <div class="glass card-hover rounded-3xl overflow-hidden template-card">
-        <div class="h-36 sm:h-48 md:h-56 card-img"
-          style="background-image:url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop');">
+        <div class="h-36 sm:h-48 md:h-56 card-img" style="background-image:url('templateweb/het3.png');">
         </div>
         <div class="p-3 sm:p-5 template-content">
           <div>
@@ -211,145 +208,163 @@
       <pre id="modalCode" class="code-box"></pre> <!-- CLOSE --> <button onclick="closeCode()" class="close-btn mt-5">
         Close </button>
     </div>
-  </div> 
+  </div>
   <script>
 
-  /* =========================
-     PORTFOLIO CODE
-  ========================= */
+    /* =========================
+       PORTFOLIO CODE
+    ========================= */
 
-  const portfolioCode = `
-<!DOCTYPE html>
-<html lang="en">
+//     const portfolioCode = String.raw`
+// <!DOCTYPE html>
+// <html lang="en">
 
-<head>
+// <head>
 
-  <title>Portfolio</title>
+// <title>Portfolio</title>
 
-  <style>
+// <style>
 
-    body{
-      background:black;
-      color:white;
-      font-family:sans-serif;
-    }
+// body{
+// background:black;
+// color:white;
+// font-family:sans-serif;
+// }
 
-  </style>
+// .hero{
+// height:100vh;
+// display:flex;
+// justify-content:center;
+// align-items:center;
+// flex-direction:column;
+// }
 
-</head>
+// </style>
 
-<body>
+// </head>
 
-  <h1>My Portfolio Website</h1>
+// <body>
 
-</body>
+// <div class="hero">
+// <h1>My Portfolio Website</h1>
+// <p>Welcome to my portfolio</p>
+// <button>Contact Me</button>
+// </div>
 
-</html>
-`;
+// </body>
 
-
-
-  /* =========================
-     LANDING PAGE CODE
-  ========================= */
-
-  const landingCode = `
-<!DOCTYPE html>
-<html>
-
-<head>
-
-  <title>Landing Page</title>
-
-</head>
-
-<body>
-
-  <h1>Landing Page Design</h1>
-
-</body>
-
-</html>
-`;
+// </html>
+// `;
 
 
 
-  /* =========================
-     DASHBOARD CODE
-  ========================= */
+    /* =========================
+       LANDING PAGE CODE
+    ========================= */
 
-  const dashboardCode = `
-<!DOCTYPE html>
-<html>
+//     const landingCode = `
+// <!DOCTYPE html>
+// <html>
 
-<head>
+// <head>
 
-  <title>Dashboard</title>
+//   <title>Landing Page</title>
 
-</head>
+// </head>
 
-<body>
+// <body>
 
-  <h1>Admin Dashboard</h1>
+//   <h1>Landing Page Design</h1>
 
-</body>
+// </body>
 
-</html>
-`;
-
-
-
-  /* =========================
-     OPEN MODAL
-  ========================= */
-
-  function openCode(code) {
-
-    document.getElementById('codeModal').style.display = 'flex';
-
-    document.getElementById('modalCode').textContent = code;
-
-  }
+// </html>
+// `;
 
 
 
-  /* =========================
-     CLOSE MODAL
-  ========================= */
+    /* =========================
+       DASHBOARD CODE
+    ========================= */
 
-  function closeCode() {
+//     const dashboardCode = `
+// <!DOCTYPE html>
+// <html>
 
-    document.getElementById('codeModal').style.display = 'none';
+// <head>
 
-  }
+//   <title>Dashboard</title>
+
+// </head>
+
+// <body>
+
+//   <h1>Admin Dashboard</h1>
+
+// </body>
+
+// </html>
+// `;
 
 
 
-  /* =========================
-     COPY CODE
-  ========================= */
+    /* =========================
+       OPEN MODAL
+    ========================= */
 
-  function copyCode() {
+    // function openCode(code) {
 
-    const code =
-      document.getElementById('modalCode').textContent;
+    //   document.getElementById('codeModal').style.display = 'flex';
 
-    navigator.clipboard.writeText(code);
+    //   document.getElementById('modalCode').textContent = code;
 
-    const btn =
-      document.getElementById('copyBtn');
+    // }
 
-    btn.innerHTML = 'Copied ✓';
 
-    setTimeout(() => {
 
-      btn.innerHTML = 'Copy Code';
 
-    }, 2000);
+    // function closeCode() {
 
-  }
+    //   document.getElementById('codeModal').style.display = 'none';
 
-</script>
+    // }
+
+    // function copyCode() {
+
+    //   const code =
+    //     document.getElementById('modalCode').textContent;
+
+    //   navigator.clipboard.writeText(code);
+
+    //   const btn =
+    //     document.getElementById('copyBtn');
+
+    //   btn.innerHTML = 'Copied ✓';
+
+    //   setTimeout(() => {
+
+    //     btn.innerHTML = 'Copy Code';
+
+    //   }, 2000);
+
+    // }
+
+function downloadFile(fileName){
+
+const link = document.createElement("a");
+
+link.href = "./files/" + fileName;
+
+link.setAttribute("download", fileName);
+
+document.body.appendChild(link);
+
+link.click();
+
+document.body.removeChild(link);
+
+}
+  </script>
 </body>
 
 </html>
