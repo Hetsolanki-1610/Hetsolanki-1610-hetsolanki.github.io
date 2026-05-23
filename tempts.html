@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Viral Templates</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #070b16;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.4), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.35), transparent 30%),
+        #070b16;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #8b5cf6, #06b6d4, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glow {
+      transition: .4s;
+    }
+
+    .glow:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(99, 102, 241, .4);
+    }
+
+    .category-btn.active {
+      background: linear-gradient(to right, #8b5cf6, #ec4899);
+      color: white;
+    }
+
+    .card-img {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .template-card {
+      animation: fade .4s ease;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="w-full px-5 md:px-12 py-5 flex items-center justify-between">
+
+      <h1 class="text-2xl md:text-4xl font-extrabold gradient-text">
+        ViralTemplates
+      </h1>
+
+      <button class="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 rounded-full font-semibold transition">
+        Free Templates
+      </button>
+
+    </nav>
+
+    <!-- HERO CONTENT -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-16">
+      <!-- LEFT CONTENT -->
+      <div class="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight max-w-5xl"> Download <span
+            class="gradient-text"> Viral Reel Templates </span> For Free </h1>
+        <p class="mt-6 text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed"> YouTube Templates,
+          Logos, Banners, Thumbnails and more. </p>
+        <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start"> <a href="#templates"
+            class="bg-pink-600 hover:bg-pink-500 px-7 py-3 rounded-full font-semibold transition"> Explore Templates
+          </a> <button onclick="showAlert()"
+            class="border border-white/20 hover:bg-white/10 px-7 py-3 rounded-full font-semibold transition"> Trending
+            Packs </button> </div>
+      </div> <!-- RIGHT VIDEO -->
+      <div class="flex-1 flex justify-center">
+        <div class="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl border border-white/10"> <video autoplay
+            muted loop playsinline class="w-full h-[250px] sm:h-[350px] md:h-[420px] object-cover">
+            <source src="your-video.mp4" type="video/mp4">
+          </video> </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TEMPLATES -->
+  <section id="templates" class="px-4 md:px-10 py-20">
+
+    <!-- HEADING -->
+    <div class="text-center mb-14">
+
+      <h2 class="text-4xl md:text-5xl font-bold">
+        Trending
+        <span class="gradient-text">
+          Categories
+        </span>
+      </h2>
+
+      <p class="text-gray-400 mt-4">
+        Click category and explore premium templates.
+      </p>
+
+    </div>
+
+    <!-- CATEGORY BUTTONS -->
+    <div class="flex flex-wrap justify-center gap-4 mb-14">
+
+      <!-- ALL -->
+      <div class="relative">
+        <button class="category-btn active glass px-6 py-3 rounded-full" onclick="toggleDropdown('allOptions')">
+          All
+        </button>
+
+        <!-- OPTIONS -->
+        <div id="allOptions" class="hidden absolute top-16 left-0 glass p-4 rounded-2xl w-48 space-y-2 z-50">
+
+          <button class="w-full text-left hover:text-cyan-400" onclick="filterTemplates('all')">
+            All Templates
+          </button>
+
+          <button class="w-full text-left hover:text-cyan-400" onclick="filterTemplates('popular')">
+            Popular
+          </button>
+
+          <button class="w-full text-left hover:text-cyan-400" onclick="filterTemplates('new')">
+            New
+          </button>
+
+        </div>
+      </div>
+
+      <!-- YOUTUBE -->
+      <div class="relative">
+        <button class="category-btn glass px-6 py-3 rounded-full" onclick="toggleDropdown('youtubeOptions')">
+          YouTube
+        </button>
+
+        <!-- OPTIONS -->
+        <div id="youtubeOptions" class="hidden absolute top-16 left-0 glass p-4 rounded-2xl w-48 space-y-2 z-50">
+
+          <button class="w-full text-left hover:text-red-400" onclick="filterTemplates('gaming')">
+            Gaming Channel
+          </button>
+
+          <button class="w-full text-left hover:text-red-400" onclick="filterTemplates('AI')">
+            AI Templates
+          </button>
+
+          <button class="w-full text-left hover:text-red-400" onclick="filterTemplates('stock')">
+            Trading & business temp
+          </button>
+
+        </div>
+      </div>
+
+      <!-- LOGO -->
+      <div class="relative">
+        <button class="category-btn glass px-6 py-3 rounded-full" onclick="toggleDropdown('logoOptions')">
+          Logo
+        </button>
+
+        <!-- OPTIONS -->
+        <div id="logoOptions" class="hidden absolute top-16 left-0 glass p-4 rounded-2xl w-48 space-y-2 z-50">
+
+          <button class="w-full text-left hover:text-yellow-400" onclick="filterTemplates('modernlogo')">
+            Modern Logo
+          </button>
+
+          <button class="w-full text-left hover:text-yellow-400" onclick="filterTemplates('3dlogo')">
+            3D Logo
+          </button>
+
+          <button class="w-full text-left hover:text-yellow-400" onclick="filterTemplates('minimal')">
+            Minimal Logo
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- TEMPLATE GRID -->
+    <div id="templateGrid" class="grid  lg:grid-cols-3 gap-4 md:gap-7">
+
+      <!-- YOUTUBE -->
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="gaming">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/thubnail 1.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Business Banner
+            </h3>
+
+            <span class="bg-indigo-500/20 text-indigo-300 text-xs px-3 py-1 rounded-full">
+              YouTube
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Clean professional business banner template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 1.png')"
+            class="mt-5 w-full bg-indigo-600 hover:bg-indigo-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/thubnail 2.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Luxury Banner
+            </h3>
+
+            <span class="bg-pink-500/20 text-pink-300 text-xs px-3 py-1 rounded-full">
+              Banner
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            High-end luxury style YouTube banner.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 2.png')"
+            class="mt-5 w-full bg-pink-600 hover:bg-pink-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/thubnail 3.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Podcast Banner
+            </h3>
+
+            <span class="bg-cyan-500/20 text-cyan-300 text-xs px-3 py-1 rounded-full">
+              Podcast
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Modern podcast channel banner template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 3.png')"
+            class="mt-5 w-full bg-cyan-600 hover:bg-cyan-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/thubnail 4.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Fitness Banner
+            </h3>
+
+            <span class="bg-green-500/20 text-green-300 text-xs px-3 py-1 rounded-full">
+              Fitness
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Gym and fitness creator banner design.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 4.png')"
+            class="mt-5 w-full bg-green-600 hover:bg-green-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/thubnail 5.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Dark Documentary
+            </h3>
+
+            <span class="bg-red-500/20 text-red-300 text-xs px-3 py-1 rounded-full">
+              Thumbnail
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Cinematic dark documentary thumbnail pack.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 5.png')"
+            class="mt-5 w-full bg-red-600 hover:bg-red-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/hettt\ \(1\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 6.png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/hettt\ \(2\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 6.png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+      
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="youtube">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/hettt\ \(3\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/thubnail 6.png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="AI">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('AItemplate/AI\ \(1\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('AItemplate/AI\ \(1\).png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="AI">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('AItemplate/AI\ \(2\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('AItemplate/AI\ \(2\).png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="AI">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('AItemplate/AI\ \(3\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('AItemplate/AI\ \(3\).png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="stock">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('Trading/trand\ \(1\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('Trading/trand\ \(1\).png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="stock">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('Trading/trand\ \(2\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('Trading/trand\ \(2\).png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="stock">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('Trading/trand\ \(3\).png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('Trading/trand\ \(3\).png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="stock">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('Trading/tranding\ 1.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Before vs After
+            </h3>
+
+            <span class="bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">
+              Viral
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Viral transformation thumbnail template.
+          </p>
+
+          <button onclick="downloadTemplate('Trading/tranding\ 1.png')"
+            class="mt-5 w-full bg-orange-600 hover:bg-orange-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- LOGO -->
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="logo">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/logo1.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              3D Logo
+            </h3>
+
+            <span class="bg-indigo-500/20 text-indigo-300 text-xs px-3 py-1 rounded-full">
+              Logo
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Premium 3D gaming logo template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/logo1.png')"
+            class="mt-5 w-full bg-indigo-600 hover:bg-indigo-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="logo">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/logo2.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Cyberpunk Logo
+            </h3>
+
+            <span class="bg-pink-500/20 text-pink-300 text-xs px-3 py-1 rounded-full">
+              Neon
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Futuristic cyberpunk logo style.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/logo2.png')"
+            class="mt-5 w-full bg-pink-600 hover:bg-pink-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="logo">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/logo3.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              AI Startup Logo
+            </h3>
+
+            <span class="bg-cyan-500/20 text-cyan-300 text-xs px-3 py-1 rounded-full">
+              AI
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            AI tech startup logo design template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/logo3.png')"
+            class="mt-5 w-full bg-cyan-600 hover:bg-cyan-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="template-card glass glow rounded-3xl overflow-hidden" data-category="logo">
+
+        <div class="h-48 md:h-56 card-img" style="background-image:url('thubnail/logo4.png');">
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-2xl font-bold">
+              Luxury Brand Logo
+            </h3>
+
+            <span class="bg-yellow-500/20 text-yellow-300 text-xs px-3 py-1 rounded-full">
+              Luxury
+            </span>
+          </div>
+
+          <p class="text-gray-400 mt-3 text-sm">
+            Elegant premium luxury logo template.
+          </p>
+
+          <button onclick="downloadTemplate('thubnail/logo4.png')"
+            class="mt-5 w-full bg-yellow-600 hover:bg-yellow-500 py-3 rounded-xl font-semibold">
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-8 text-center text-gray-400 px-5">
+    © 2026 ViralTemplates • Premium Responsive Website
+  </footer>
+
+  <!-- JS -->
+  <script>
+
+    function showAlert() {
+      alert("🔥 Trending Packs Coming Soon!");
+    }
+
+    function downloadTemplate(filePath) {
+
+      const link = document.createElement('a');
+
+      link.href = filePath;
+      link.download = filePath;
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+    }
+
+    // CATEGORY FILTER
+    function filterTemplates(category, btn) {
+
+      const cards = document.querySelectorAll('.template-card');
+
+      cards.forEach(card => {
+
+        if (category === 'all') {
+          card.style.display = 'block';
+        }
+
+        else if (card.dataset.category === category) {
+          card.style.display = 'block';
+        }
+
+        else {
+          card.style.display = 'none';
+        }
+
+      });
+
+      // ACTIVE BUTTON
+      document.querySelectorAll('.category-btn')
+        .forEach(button => {
+          button.classList.remove('active');
+        });
+
+      btn.classList.add('active');
+
+    }
+    function toggleDropdown(id) {
+
+      // sab dropdown close karo
+      document.querySelectorAll('[id$="Options"]').forEach(menu => {
+        if (menu.id !== id) {
+          menu.classList.add('hidden');
+        }
+      });
+
+      // selected toggle karo
+      document.getElementById(id).classList.toggle('hidden');
+    }
+
+    // bahar click karne par close
+    window.addEventListener('click', function (e) {
+
+      if (!e.target.closest('.relative')) {
+        document.querySelectorAll('[id$="Options"]').forEach(menu => {
+          menu.classList.add('hidden');
+        });
+      }
+
+    });
+  </script>
+
+</body>
+
+</html>

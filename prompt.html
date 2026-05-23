@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PromptFlow</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at top left, rgba(168, 85, 247, 0.25), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.25), transparent 30%),
+        #050816;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #a855f7, #ec4899, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-hover {
+      transition: 0.4s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.35);
+    }
+
+    /* SAME SIZE CARD */
+
+    .template-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .post-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .prompt-text {
+      min-height: 120px;
+    }
+
+    .copy-btn {
+      transition: 0.3s;
+    }
+
+    .copy-btn:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- HERO -->
+
+  <section class="hero-bg min-h-screen flex flex-col">
+
+
+    <!-- NAVBAR -->
+
+    <nav class="w-full px-5 md:px-12 py-5 flex items-center justify-between">
+
+      <h1 class="text-2xl md:text-4xl font-extrabold gradient-text">
+        PromptFlow
+      </h1>
+
+      <button
+        class="bg-pink-600 hover:bg-pink-500 px-5 py-2 rounded-full font-semibold transition shadow-lg shadow-pink-500/30">
+
+        Viral Prompts
+
+      </button>
+
+    </nav>
+
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="flex-1 flex flex-col justify-center items-center text-center px-5">
+
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight max-w-5xl">
+
+        Viral AI
+        <span class="gradient-text">
+          Image Prompts
+        </span>
+
+      </h1>
+
+      <p class="mt-6 text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed">
+
+        Premium prompts for ChatGPT, Midjourney,
+        Gemini and Leonardo AI.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- PROMPT SECTION -->
+
+  <section class="px-4 md:px-10 py-20">
+
+
+    <!-- HEADING -->
+
+    <div class="text-center mb-14">
+
+      <h2 class="text-4xl md:text-5xl font-bold">
+
+        Trending
+        <span class="gradient-text">
+          AI Prompts
+        </span>
+
+      </h2>
+
+      <p class="text-gray-400 mt-4">
+        Copy high quality image prompts.
+      </p>
+
+    </div>
+
+
+
+    <!-- PERFECT GRID -->
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+
+
+
+      <!-- CARD 1 -->
+
+      <div class="glass card-hover rounded-3xl overflow-hidden template-card">
+
+        <!-- IMAGE -->
+
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+          class="post-image">
+
+
+        <!-- CONTENT -->
+
+        <div class="p-5 template-content">
+
+
+          <div>
+
+            <!-- PROFILE -->
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-12 h-12 rounded-full overflow-hidden">
+
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop"
+                  class="w-full h-full object-cover">
+
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-lg">
+                  AI Creator
+                </h3>
+
+                <p class="text-gray-400 text-sm">
+                  @promptdesigner
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- PROMPT -->
+
+            <div class="mt-5 prompt-text">
+
+              <p class="prompt-data text-gray-300 leading-relaxed text-sm sm:text-base">
+
+                Create a cinematic mountain landscape with glowing sunset,
+                ultra realistic lighting, volumetric fog,
+                8k details, masterpiece quality.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- BUTTONS -->
+
+          <div class="mt-6 flex gap-3">
+
+            <button onclick="copyPrompt(this)"
+              class="copy-btn flex-1 bg-pink-600 hover:bg-pink-500 py-3 rounded-xl font-semibold transition">
+
+              Copy Prompt
+
+            </button>
+
+            <button
+              class="flex-1 bg-cyan-600 hover:bg-cyan-500 py-3 rounded-xl font-semibold transition">
+
+              View More
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 2 -->
+
+      <div class="glass card-hover rounded-3xl overflow-hidden template-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+          class="post-image">
+
+        <div class="p-5 template-content">
+
+          <div>
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-12 h-12 rounded-full overflow-hidden">
+
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop"
+                  class="w-full h-full object-cover">
+
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-lg">
+                  Prompt Master
+                </h3>
+
+                <p class="text-gray-400 text-sm">
+                  @viraldesigner
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="mt-5 prompt-text">
+
+              <p class="prompt-data text-gray-300 leading-relaxed text-sm sm:text-base">
+
+                futuristic cyberpunk city at night,
+                neon lights reflections, ultra realistic,
+                cinematic atmosphere, trending artstation style.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="mt-6 flex gap-3">
+
+            <button onclick="copyPrompt(this)"
+              class="copy-btn flex-1 bg-pink-600 hover:bg-pink-500 py-3 rounded-xl font-semibold transition">
+
+              Copy Prompt
+
+            </button>
+
+            <button
+              class="flex-1 bg-cyan-600 hover:bg-cyan-500 py-3 rounded-xl font-semibold transition">
+
+              View More
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 3 -->
+
+      <div class="glass card-hover rounded-3xl overflow-hidden template-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop"
+          class="post-image">
+
+        <div class="p-5 template-content">
+
+          <div>
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-12 h-12 rounded-full overflow-hidden">
+
+                <img
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop"
+                  class="w-full h-full object-cover">
+
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-lg">
+                  Creative AI
+                </h3>
+
+                <p class="text-gray-400 text-sm">
+                  @visualartist
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="mt-5 prompt-text">
+
+              <p class="prompt-data text-gray-300 leading-relaxed text-sm sm:text-base">
+
+                luxury modern villa interior design,
+                warm lighting, realistic shadows,
+                ultra HD architecture render, cinematic view.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="mt-6 flex gap-3">
+
+            <button onclick="copyPrompt(this)"
+              class="copy-btn flex-1 bg-pink-600 hover:bg-pink-500 py-3 rounded-xl font-semibold transition">
+
+              Copy Prompt
+
+            </button>
+
+            <button
+              class="flex-1 bg-cyan-600 hover:bg-cyan-500 py-3 rounded-xl font-semibold transition">
+
+              View More
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="border-t border-white/10 py-8 text-center text-gray-400 px-5">
+
+    © 2026 PromptFlow • Premium AI Prompt Website
+
+  </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function copyPrompt(button){
+
+      // ONLY COPY PROMPT TEXT
+
+      const prompt =
+      button.closest('.template-card')
+      .querySelector('.prompt-data')
+      .innerText;
+
+      navigator.clipboard.writeText(prompt);
+
+      button.innerHTML = 'Copied ✓';
+
+      setTimeout(() => {
+
+        button.innerHTML = 'Copy Prompt';
+
+      },2000);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

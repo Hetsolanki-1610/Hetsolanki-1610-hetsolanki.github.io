@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeGalaxy</title> <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script> <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #06131a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero-bg {
+      background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.25), transparent 30%), radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.25), transparent 30%), #06131a;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #10b981, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+    }
+
+    .card-hover {
+      transition: 0.4s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+    }
+
+    .card-img {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .template-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 1000px;
+      max-height: 90vh;
+      overflow: hidden;
+      border-radius: 25px;
+      padding: 25px;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .code-box {
+      background: #020617;
+      padding: 20px;
+      border-radius: 18px;
+      overflow: auto;
+      color: #38bdf8;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 20px;
+      max-height: 65vh;
+      white-space: pre-wrap;
+    }
+
+    .close-btn {
+      background: #ef4444;
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      background: #dc2626;
+    }
+
+    .copy-btn {
+      background: #06b6d4;
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .copy-btn:hover {
+      background: #0891b2;
+    }
+  </style>
+</head>
+
+<body> <!-- HERO -->
+  <section class="hero-bg min-h-screen flex flex-col"> <!-- NAVBAR -->
+    <nav class="w-full px-5 md:px-12 py-5 flex items-center justify-between">
+      <h1 class="text-2xl md:text-4xl font-extrabold gradient-text"> CodeGalaxy </h1> <button
+        class=" bg-cyan-500 hover:bg-cyan-400 px-2 py-1 rounded-full font-semibold transition shadow-lg shadow-cyan-500/30">
+        Free Source Code </button>
+    </nav> <!-- HERO CONTENT -->
+    <div class="flex-1 flex flex-col justify-center items-center text-center px-5">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight max-w-5xl"> Get <span
+          class="gradient-text"> Premium Website Codes </span> For Free </h1>
+      <p class="mt-6 text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed"> Landing Pages, Portfolio
+        Templates, UI Components and Viral Web Designs. </p> <a href="#templates"
+        class="mt-8 bg-emerald-500 hover:bg-emerald-400 px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-emerald-500/30">
+        Explore Codes </a>
+    </div>
+  </section> <!-- TEMPLATE SECTION -->
+  <section id="templates" class="px-4 md:px-10 py-20">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-bold"> Trending <span class="gradient-text"> Code Templates </span> </h2>
+      <p class="text-gray-400 mt-4"> Click Get Code to view full source code. </p>
+    </div> <!-- GRID -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-7"> <!-- CARD 1 -->
+      <div class="glass card-hover rounded-3xl overflow-hidden template-card">
+        <div class="h-36 sm:h-48 md:h-56 card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');">
+        </div>
+        <div class="p-3 sm:p-5 template-content">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg sm:text-2xl font-bold"> Portfolio </h3> <span
+                class="bg-cyan-500/20 text-cyan-300 text-xs sm:text-sm px-2 py-1 rounded-full"> HTML </span>
+            </div>
+            <p class="text-gray-400 mt-3 text-xs sm:text-sm leading-relaxed"> Premium portfolio website source code.
+            </p>
+          </div> <button onclick="openCode(portfolioCode)"
+            class="w-full mt-5 bg-cyan-500 hover:bg-cyan-400 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition">
+            Get Code </button>
+        </div>
+      </div> <!-- CARD 2 -->
+      <div class="glass card-hover rounded-3xl overflow-hidden template-card">
+        <div class="h-36 sm:h-48 md:h-56 card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');">
+        </div>
+        <div class="p-3 sm:p-5 template-content">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg sm:text-2xl font-bold"> Landing Page </h3> <span
+                class="bg-emerald-500/20 text-emerald-300 text-xs sm:text-sm px-2 py-1 rounded-full"> UI </span>
+            </div>
+            <p class="text-gray-400 mt-3 text-xs sm:text-sm leading-relaxed"> Modern landing page with animations. </p>
+          </div> <button onclick="openCode(landingCode)"
+            class="w-full mt-5 bg-emerald-500 hover:bg-emerald-400 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition">
+            Get Code </button>
+        </div>
+      </div> <!-- CARD 3 -->
+      <div class="glass card-hover rounded-3xl overflow-hidden template-card">
+        <div class="h-36 sm:h-48 md:h-56 card-img"
+          style="background-image:url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop');">
+        </div>
+        <div class="p-3 sm:p-5 template-content">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg sm:text-2xl font-bold"> Dashboard </h3> <span
+                class="bg-green-500/20 text-green-300 text-xs sm:text-sm px-2 py-1 rounded-full"> Admin </span>
+            </div>
+            <p class="text-gray-400 mt-3 text-xs sm:text-sm leading-relaxed"> Responsive admin dashboard UI template.
+            </p>
+          </div> <button onclick="openCode(dashboardCode)"
+            class="w-full mt-5 bg-green-500 hover:bg-green-400 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition">
+            Get Code </button>
+        </div>
+      </div>
+    </div>
+  </section> <!-- MODAL -->
+  <div id="codeModal" class="modal">
+    <div class="modal-box"> <!-- TOP -->
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <h2 class="text-2xl sm:text-3xl font-bold gradient-text"> Template Source Code </h2> <button id="copyBtn"
+          onclick="copyCode()" class="copy-btn"> Copy Code </button>
+      </div> <!-- CODE -->
+      <pre id="modalCode" class="code-box"></pre> <!-- CLOSE --> <button onclick="closeCode()" class="close-btn mt-5">
+        Close </button>
+    </div>
+  </div> 
+  <script>
+
+  /* =========================
+     PORTFOLIO CODE
+  ========================= */
+
+  const portfolioCode = `
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Portfolio</title>
+
+  <style>
+
+    body{
+      background:black;
+      color:white;
+      font-family:sans-serif;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>My Portfolio Website</h1>
+
+</body>
+
+</html>
+`;
+
+
+
+  /* =========================
+     LANDING PAGE CODE
+  ========================= */
+
+  const landingCode = `
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Landing Page</title>
+
+</head>
+
+<body>
+
+  <h1>Landing Page Design</h1>
+
+</body>
+
+</html>
+`;
+
+
+
+  /* =========================
+     DASHBOARD CODE
+  ========================= */
+
+  const dashboardCode = `
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Dashboard</title>
+
+</head>
+
+<body>
+
+  <h1>Admin Dashboard</h1>
+
+</body>
+
+</html>
+`;
+
+
+
+  /* =========================
+     OPEN MODAL
+  ========================= */
+
+  function openCode(code) {
+
+    document.getElementById('codeModal').style.display = 'flex';
+
+    document.getElementById('modalCode').textContent = code;
+
+  }
+
+
+
+  /* =========================
+     CLOSE MODAL
+  ========================= */
+
+  function closeCode() {
+
+    document.getElementById('codeModal').style.display = 'none';
+
+  }
+
+
+
+  /* =========================
+     COPY CODE
+  ========================= */
+
+  function copyCode() {
+
+    const code =
+      document.getElementById('modalCode').textContent;
+
+    navigator.clipboard.writeText(code);
+
+    const btn =
+      document.getElementById('copyBtn');
+
+    btn.innerHTML = 'Copied ✓';
+
+    setTimeout(() => {
+
+      btn.innerHTML = 'Copy Code';
+
+    }, 2000);
+
+  }
+
+</script>
+</body>
+
+</html>
